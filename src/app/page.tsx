@@ -88,7 +88,15 @@ function Header() {
         <div className="absolute inset-y-0 left-8 min-[1098px]:left-[240px] w-px bg-line" />
         <div className="absolute inset-y-0 right-8 min-[1098px]:right-[240px] w-px bg-line" />
       </div>
-      <GridDots side="bottom" />
+      {/* Griddots above the bottom border line */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-1 left-1/2 -translate-x-1/2 w-full max-w-[1430px]"
+        style={{ bottom: 0 }}
+      >
+        <span className="absolute bottom-0 left-8 min-[1098px]:left-[240px] -translate-x-1/2 size-2 bg-[#c9c9c9] z-20" />
+        <span className="absolute bottom-0 right-8 min-[1098px]:right-[240px] translate-x-1/2 size-2 bg-[#c9c9c9] z-20" />
+      </div>
       <div className="mx-auto w-full max-w-[1440px]">
         <div className="flex items-center justify-between h-20 px-16 min-[1098px]:px-[272px]">
           <Logo />
@@ -270,7 +278,7 @@ function Hero() {
   };
 
   return (
-    <section id="hero" className="relative z-10 pt-20 pb-[80px]">
+    <section id="hero" className="relative z-24 pt-20 pb-[12px]">
       <div className="mx-auto w-full max-w-[1440px] px-16 min-[1098px]:px-[272px]">
         {/* Card falls from top on first load */}
         <div
@@ -287,7 +295,7 @@ function Hero() {
         >
           <Lanyard />
 
-          <div className="relative rounded-[18px] bg-[#F4F4F4] p-3">
+          <div className="relative rounded-[18px] bg-[#F4F4F4] px-3 pb-3 pt-[48px] -mt-9">
             {/* Inner white card */}
             <div className="relative rounded-[14px] bg-white border border-line px-6 sm:px-10 pt-10 pb-10">
               <div className="flex items-start justify-between gap-6">
@@ -307,6 +315,13 @@ function Hero() {
                     </h1>
                     <p className="font-mono text-[14px] leading-[20px] text-muted">
                       Sr. Product Designer
+                    </p>
+                    {/* Mobile-only: HFI-CUA stacked below "Sr. Product Designer" (< 480px) */}
+                    <p
+                      className="hidden max-[480px]:block mt-1 font-mono text-[13px] font-semibold whitespace-nowrap tracking-wide bg-clip-text text-transparent"
+                      style={{ backgroundImage: "linear-gradient(-20.7deg, rgb(139,46,227) 41.9%, rgb(75,2,227) 86%)" }}
+                    >
+                      HFI-CUA · Trained
                     </p>
                     {/* Social icons row */}
                     <div className="mt-2 flex items-center gap-2.5 text-ink/50">
@@ -340,8 +355,9 @@ function Hero() {
                     </div>
                   </div>
                 </div>
+                {/* Desktop-only: HFI-CUA on the right (>= 480px) */}
                 <span
-                  className="font-mono text-[13px] font-semibold whitespace-nowrap tracking-wide bg-clip-text text-transparent"
+                  className="max-[480px]:hidden font-mono text-[13px] font-semibold whitespace-nowrap tracking-wide bg-clip-text text-transparent"
                   style={{ backgroundImage: "linear-gradient(-20.7deg, rgb(139,46,227) 41.9%, rgb(75,2,227) 86%)" }}
                 >
                   HFI-CUA · Trained
@@ -398,14 +414,14 @@ function Lanyard() {
   return (
     <div
       aria-hidden
-      className="absolute left-1/2 -translate-x-1/2 -top-[80px] flex flex-col items-center z-10"
+      className="absolute left-1/2 -translate-x-1/2 -top-[45px] flex flex-col items-center z-10"
     >
       {/* Accent colour top block */}
-      <div className="w-[42px] h-[28px] rounded-t-[6px] bg-accent" />
+      <div className="w-[48px] h-[40px] rounded-t-[6px] bg-accent" />
       {/* Dark badge body with open-bottom slot */}
-      <div className="relative w-[42px] h-[34px] bg-ink rounded-b-[4px] flex items-end justify-center">
+      <div className="relative w-[48px] h-[28px] bg-ink rounded-b-[4px] flex items-end justify-center">
         {/* Bottom slot opening */}
-        <div className="w-[22px] h-[10px] rounded-t-[3px] bg-[#F4F4F4] translate-y-[1px]" />
+        <div className="w-[28px] h-[14px] rounded-t-[4px] bg-[#FFFFFF] translate-y-[6px]" />
       </div>
     </div>
   );
@@ -422,9 +438,7 @@ function PrevWorked() {
   ];
   const loop = [...logos, ...logos];
   return (
-    <section className="relative z-10 border-y border-line">
-      <GridDots side="top" />
-      <GridDots side="bottom" />
+    <section className="relative z-10 border-b border-line">
       <div className="mx-auto w-full max-w-[1440px] px-16 min-[1098px]:px-[272px] py-8">
         <p className="font-display text-[18px] font-medium text-ink mb-6 text-center">
           Prev. worked with :
@@ -449,6 +463,15 @@ function PrevWorked() {
             ))}
           </div>
         </div>
+      </div>
+      {/* Griddots above the bottom border line */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-1 left-1/2 -translate-x-1/2 w-full max-w-[1430px]"
+        style={{ bottom: 0 }}
+      >
+        <span className="absolute bottom-0 left-8 min-[1098px]:left-[240px] -translate-x-1/2 size-2 bg-[#c9c9c9] z-20" />
+        <span className="absolute bottom-0 right-8 min-[1098px]:right-[240px] translate-x-1/2 size-2 bg-[#c9c9c9] z-20" />
       </div>
     </section>
   );
@@ -500,7 +523,7 @@ function HowIDesign() {
   return (
     <section id="expertise" className="relative z-10 border-t border-line">
       <GridDots side="top" />
-      <div className="mx-auto w-full max-w-[1440px] px-16 min-[1098px]:px-[272px] py-[80px]">
+      <div className="mx-auto w-full max-w-[1440px] px-16 min-[1098px]:px-[272px] pt-[80px] pb-[32px]">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           <h2 className="font-display text-[24px] leading-[28px] font-medium">
             How I Design:
@@ -565,7 +588,7 @@ function VennDiagram() {
 function AreasOfExpertise() {
   return (
     <section className="relative z-10">
-      <div className="mx-auto w-full max-w-[1440px] px-16 min-[1098px]:px-[272px] py-[80px]">
+      <div className="mx-auto w-full max-w-[1440px] px-16 min-[1098px]:px-[272px] pt-[32px] pb-[80px]">
         <h2 className="font-display text-[24px] font-medium text-center mb-14">
           Areas of Expertise
         </h2>
@@ -638,21 +661,24 @@ const workProjects = [
     title: "Design System — White Label Product",
     desc: "This selected project focused on turning product vision into scalable, real-world experiences — powered by thoughtful AI integration.",
     img: "/img/work-showcase.png",
-    href: "#",
-  },
-  {
-    client: "Verizon",
-    title: "Verizon Component Library",
-    desc: "This selected project focused on turning product vision into scalable, real-world experiences — powered by thoughtful AI integration.",
-    img: "/img/work-showcase.png",
-    href: "#",
+    href: "/work/euroland-design-system",
+    comingSoon: false,
   },
   {
     client: "M2P Fintech",
-    title: "M2P Mobile Banking App",
-    desc: "This selected project focused on turning product vision into scalable, real-world experiences — powered by thoughtful AI integration.",
-    img: "/img/work-showcase.png",
+    title: "WPS - B2B Product",
+    desc: "WPS is a one of the b2b product of M2P Fintech, It means that Wages Processing System  in UAE.",
+    img: "/img/Img3.png",
     href: "#",
+    comingSoon: true,
+  },
+  {
+    client: "M2P Fintech",
+    title: "MS Teams - QuikGift",
+    desc: "QuikGift is a rewarding platform that aim to send rewards between colleague in an organisation. `Where QuikGift integrated with Microsoft Teams (as a Personal App).",
+    img: "/img/Img2.png",
+    href: "#",
+    comingSoon: true,
   },
 ];
 
@@ -686,9 +712,6 @@ function WorkCard({ p }: { p: typeof workProjects[number] }) {
           sizes="(min-width: 1098px) 960px, 100vw"
           className="object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out"
         />
-
-        {/* Blue accent bar */}
-        <div className="absolute bottom-[84px] left-0 h-[22px] w-[157px] bg-[#4933fa]" />
 
         {/* Cursor-following "View project" pill */}
         {/* Outer div: no transition — snaps to cursor instantly */}
@@ -725,12 +748,19 @@ function WorkCard({ p }: { p: typeof workProjects[number] }) {
 
       {/* Text below image */}
       <div className="mt-5">
-        <p
-          className="font-display text-[20px] leading-[28px] font-medium bg-clip-text text-transparent"
-          style={{ backgroundImage: "linear-gradient(-44.9deg, rgb(139,46,227) 41.9%, rgb(75,2,227) 86%)" }}
-        >
-          {p.client}
-        </p>
+        <div className="flex items-center justify-between gap-4">
+          <p
+            className="font-display text-[20px] leading-[28px] font-medium bg-clip-text text-transparent"
+            style={{ backgroundImage: "linear-gradient(-44.9deg, rgb(139,46,227) 41.9%, rgb(75,2,227) 86%)" }}
+          >
+            {p.client}
+          </p>
+          {p.comingSoon && (
+            <span className="inline-flex items-center rounded-full border border-[#22c55e] bg-[#e7faec] px-3 py-1 font-mono text-[12px] font-semibold text-[#22c55e] whitespace-nowrap">
+              Coming Soon
+            </span>
+          )}
+        </div>
         <h3 className="mt-1 font-mono text-[20px] leading-[24px] font-semibold text-ink group-hover:text-accent transition-colors duration-300">
           {p.title}
         </h3>
