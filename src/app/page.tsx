@@ -3,15 +3,9 @@
 import Image from "next/image";
 import React from "react";
 import {
-  House,
-  ArrowUp10,
-  Puzzle,
-  PencilRuler,
-  BookUser,
-  Globe,
-  Download,
   ArrowRight,
 } from "lucide-react";
+import NavigationDock from "./_components/NavigationDock";
 
 /* Shared Figma CTA style */
 const ctaStyle: React.CSSProperties = {
@@ -23,7 +17,7 @@ const ctaStyle: React.CSSProperties = {
 
 export default function Home() {
   return (
-    <main className="relative w-full overflow-x-hidden bg-paper text-ink pb-32">
+    <main className="relative w-full overflow-x-hidden bg-paper text-ink pb-8">
       <FrameGrid />
 
       <Header />
@@ -42,7 +36,7 @@ export default function Home() {
 
       <Footer />
 
-      <Navigation />
+      <NavigationDock />
     </main>
   );
 }
@@ -121,134 +115,6 @@ function Logo() {
   );
 }
 
-/* ---------- Nav tooltip ---------- */
-
-function NavTooltip({ label }: { label: string }) {
-  return (
-    <div
-      className="pointer-events-none absolute -top-11 left-1/2 -translate-x-1/2 z-50 flex flex-col items-center gap-1
-        opacity-0 translate-y-2 scale-95
-        group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100
-        transition-all duration-200 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
-    >
-      <span className="whitespace-nowrap rounded-full bg-[#1a1a1a] px-3 py-1 font-mono text-[10px] font-medium text-white/90 shadow-sm">
-        {label}
-      </span>
-      <span className="w-px h-2 bg-[#1a1a1a]/30" />
-    </div>
-  );
-}
-
-/* ---------- Navigation dock ---------- */
-
-function Navigation() {
-  const [activeSection, setActiveSection] = React.useState("hero");
-  const [showSocialDropdown, setShowSocialDropdown] = React.useState(false);
-
-  const navItems = [
-    { id: "hero", label: "Home", href: "#hero", Icon: House },
-    { id: "brought", label: "Impact", href: "#brought", Icon: ArrowUp10 },
-    { id: "expertise", label: "Process", href: "#expertise", Icon: PencilRuler },
-    { id: "work", label: "Work", href: "#work", Icon: Puzzle },
-    { id: "contact", label: "Contact", href: "#contact", Icon: BookUser },
-  ];
-
-  const socials = [
-    { label: "LinkedIn", href: "https://www.linkedin.com/in/kumara-guru-05596b103/" },
-    { label: "Behance", href: "https://www.behance.net/kumaraguru1" },
-    { label: "Dribbble", href: "https://dribbble.com/Kumara_14" },
-  ];
-
-  React.useEffect(() => {
-    const handleScroll = () => {
-      const sections = ["contact", "work", "expertise", "brought", "hero"];
-      for (const id of sections) {
-        const el = document.getElementById(id);
-        if (el && el.getBoundingClientRect().top <= window.innerHeight / 2) {
-          setActiveSection(id);
-          break;
-        }
-      }
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  return (
-    <nav aria-label="Primary" className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
-      <div className="relative flex items-center gap-1 rounded-[64px] border border-[#EDEDED] bg-white/20 backdrop-blur-sm shadow-[0_8px_24px_rgba(0,0,0,0.04)] px-3 py-2.5">
-
-        {navItems.map(({ id, label, href, Icon }) => {
-          const isActive = activeSection === id;
-          return (
-            <div key={id} className="group relative flex items-center justify-center">
-              <NavTooltip label={label} />
-              <a
-                href={href}
-                aria-label={label}
-                className={`relative grid place-items-center rounded-full transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${isActive
-                  ? "h-12 w-12 text-white"
-                  : "h-10 w-10 text-ink/50 group-hover:h-[52px] group-hover:w-[52px] group-hover:text-ink group-hover:bg-white group-hover:shadow-[0_4px_14px_rgba(0,0,0,0.12)]"
-                  }`}
-                style={isActive ? {
-                  backgroundImage: "url(/img/nav-active.svg)",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                } : undefined}
-              >
-                <Icon
-                  strokeWidth={1.5}
-                  className={`relative z-10 transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${isActive ? "h-5 w-5" : "h-5 w-5 group-hover:h-[22px] group-hover:w-[22px]"}`}
-                />
-              </a>
-            </div>
-          );
-        })}
-
-        {/* Social globe */}
-        <div className="group relative flex items-center justify-center">
-          <NavTooltip label="Social" />
-          <button
-            onClick={() => setShowSocialDropdown(!showSocialDropdown)}
-            aria-label="Social links"
-            className="relative grid place-items-center h-10 w-10 rounded-full text-ink/50 group-hover:h-[52px] group-hover:w-[52px] group-hover:text-ink group-hover:bg-white group-hover:shadow-[0_4px_14px_rgba(0,0,0,0.12)] transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
-          >
-            <Globe strokeWidth={1.5} className="h-5 w-5 transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:h-[22px] group-hover:w-[22px]" />
-          </button>
-          {showSocialDropdown && (
-            <div className="absolute bottom-16 left-1/2 -translate-x-1/2 rounded-2xl border border-[#EDEDED] bg-white/90 backdrop-blur-sm shadow-[0_8px_24px_rgba(0,0,0,0.08)] p-2 flex flex-col gap-1 whitespace-nowrap z-50">
-              {socials.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-2 text-[13px] font-mono text-ink hover:bg-ink/5 rounded-lg transition-colors"
-                >
-                  {social.label}
-                </a>
-              ))}
-            </div>
-          )}
-        </div>
-
-        {/* Download CV */}
-        <div className="group relative flex items-center justify-center">
-          <NavTooltip label="Resume" />
-          <a
-            href="/CV.pdf"
-            download="kumara-guru-cv.pdf"
-            aria-label="Download CV"
-            className="relative grid place-items-center h-10 w-10 rounded-full text-ink/50 group-hover:h-[52px] group-hover:w-[52px] group-hover:text-ink group-hover:bg-white group-hover:shadow-[0_4px_14px_rgba(0,0,0,0.12)] transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
-          >
-            <Download strokeWidth={1.5} className="h-5 w-5 transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:h-[22px] group-hover:w-[22px]" />
-          </a>
-        </div>
-
-      </div>
-    </nav>
-  );
-}
 
 function SeekingPill() {
   return (
@@ -317,12 +183,15 @@ function Hero() {
                       Sr. Product Designer
                     </p>
                     {/* Mobile-only: HFI-CUA stacked below "Sr. Product Designer" (< 480px) */}
-                    <p
-                      className="hidden max-[480px]:block mt-1 font-mono text-[13px] font-semibold whitespace-nowrap tracking-wide bg-clip-text text-transparent"
+                    <a
+                      href="https://hfiinstitute.com/verify/?credential=0af20815-e1cd-4ead-b955-0dc5aa62c2e9"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hidden max-[480px]:inline-block mt-1 font-mono text-[13px] font-semibold whitespace-nowrap tracking-wide bg-clip-text text-transparent hover:underline underline-offset-4 decoration-[rgb(75,2,227)]"
                       style={{ backgroundImage: "linear-gradient(-20.7deg, rgb(139,46,227) 41.9%, rgb(75,2,227) 86%)" }}
                     >
-                      HFI-CUA · Trained
-                    </p>
+                      HFI - CUA Certified
+                    </a>
                     {/* Social icons row */}
                     <div className="mt-2 flex items-center gap-2.5 text-ink/50">
                       <a
@@ -356,12 +225,15 @@ function Hero() {
                   </div>
                 </div>
                 {/* Desktop-only: HFI-CUA on the right (>= 480px) */}
-                <span
-                  className="max-[480px]:hidden font-mono text-[13px] font-semibold whitespace-nowrap tracking-wide bg-clip-text text-transparent"
+                <a
+                  href="https://hfiinstitute.com/verify/?credential=0af20815-e1cd-4ead-b955-0dc5aa62c2e9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="max-[480px]:hidden font-mono text-[13px] font-semibold whitespace-nowrap tracking-wide bg-clip-text text-transparent hover:underline underline-offset-4 decoration-[rgb(75,2,227)]"
                   style={{ backgroundImage: "linear-gradient(-20.7deg, rgb(139,46,227) 41.9%, rgb(75,2,227) 86%)" }}
                 >
-                  HFI-CUA · Trained
-                </span>
+                  HFI - CUA Certified
+                </a>
               </div>
 
               <p className="mt-8 font-mono text-[20px] sm:text-[22px] leading-[30px] sm:leading-[32px] text-ink">
@@ -724,7 +596,7 @@ function WorkCard({ p }: { p: typeof workProjects[number] }) {
             transform: "translate(-50%, -50%)",
           }}
         >
-          {/* Inner span: transition only opacity + scale */}
+          {/* Inner span: glassmorphism pill with dark text */}
           <span
             className="flex items-center gap-2 rounded-full px-5 py-2.5 font-mono text-[13px] font-semibold whitespace-nowrap shadow-lg"
             style={{
@@ -732,7 +604,7 @@ function WorkCard({ p }: { p: typeof workProjects[number] }) {
               backdropFilter: "blur(12px)",
               WebkitBackdropFilter: "blur(12px)",
               border: "1px solid rgba(255,255,255,0.35)",
-              color: "#fff",
+              color: "#000",
               opacity: hovered ? 1 : 0,
               transform: `scale(${hovered ? 1 : 0.75})`,
               transition: "opacity 0.22s ease, transform 0.22s cubic-bezier(0.34,1.56,0.64,1)",
@@ -805,8 +677,8 @@ function Footer() {
   return (
     <footer id="contact" className="relative z-10 border-t border-line">
       <GridDots side="top" />
-      <div className="mx-auto w-full max-w-[1440px] px-16 min-[1098px]:px-[272px] py-10">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+      <div className="mx-auto w-full max-w-[1440px] px-16 min-[1098px]:px-[272px] py-9">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <h2 className="font-display text-[28px] sm:text-[32px] leading-[40px] font-medium text-center md:text-left">
             Let&apos;s build incredible things together!
           </h2>
