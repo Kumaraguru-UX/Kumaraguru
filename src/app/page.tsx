@@ -549,8 +549,8 @@ const workProjects = [
     title: "MS Teams - QuikGift",
     desc: "QuikGift is a rewarding platform that aim to send rewards between colleague in an organisation. `Where QuikGift integrated with Microsoft Teams (as a Personal App).",
     img: "/img/Img2.png",
-    href: "#",
-    comingSoon: true,
+    href: "/work/quikgift",
+    comingSoon: false,
   },
 ];
 
