@@ -238,7 +238,7 @@ function Hero() {
 
               <p className="mt-8 font-mono text-[20px] sm:text-[22px] leading-[30px] sm:leading-[32px] text-ink">
                 AI-led Experience Designer with{" "}
-                <span className="font-semibold">7+ years</span> crafting 0→1 and
+                <span className="font-semibold">5+ years</span> crafting 0→1 and
                 scalable products, with expertise in building and maintaining
                 design systems.
               </p>
