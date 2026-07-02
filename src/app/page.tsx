@@ -537,12 +537,12 @@ const workProjects = [
     comingSoon: false,
   },
   {
-    client: "M2P Fintech",
-    title: "WPS - B2B Product",
-    desc: "WPS is a one of the b2b product of M2P Fintech, It means that Wages Processing System  in UAE.",
-    img: "/img/Img3.png",
-    href: "#",
-    comingSoon: true,
+    client: "Innova Solutions",
+    title: "O360 — Wireline Sales Quoting",
+    desc: "An end-to-end CPQ experience that unifies fragmented quoting workflows into one guided journey — for sales reps and solution architects.",
+    img: "/img/o360-thumb.png",
+    href: "/work/o360-quoting",
+    comingSoon: false,
   },
   {
     client: "M2P Fintech",
