@@ -238,63 +238,61 @@ export default function O360CaseStudy() {
         </div>
       </section>
 
+      {/* Insight 360 CPQ Start to End Flow */}
+      <section className="relative border-t border-line">
+        <GridDots side="top" />
+        <div className="mx-auto w-full max-w-[1440px] px-16 min-[1098px]:px-[272px] py-12">
+          <Reveal>
+            <h2 className="font-display text-[24px] leading-[32px] font-medium text-ink max-w-[896px]">
+              Insight 360 CPQ Start to End Flow
+            </h2>
+          </Reveal>
+          <Reveal delay={1}>
+            <div
+              className="mt-8 relative w-full overflow-hidden rounded-[12px] border border-[#e7e7e7] bg-white"
+              style={{ aspectRatio: "896/598" }}
+            >
+              <Image
+                src="/img/case-studies/o360/insight360.png"
+                alt="Insight 360 CPQ start to end flow diagram"
+                fill
+                sizes="(min-width: 1098px) 896px, 100vw"
+                className="object-contain"
+              />
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* Discovery & Research */}
       <section className="relative border-t border-line">
         <GridDots side="top" />
         <div className="mx-auto w-full max-w-[1440px] px-16 min-[1098px]:px-[272px] py-12">
           <SectionHead
-            caption="Discovery & Research"
+            caption="Understanding Business Needs and challenges"
             heading="Anchored in real sales workflows."
-            body="Discovery began with stakeholder interviews of SMEs across sales and solutions teams, a heuristic evaluation of the legacy CPQ stack, and a comparative analysis of competing Configure-Price-Quote tools. The goal: understand exactly where reps lost time, made errors, or abandoned the flow."
-          />
-        </div>
-      </section>
-
-      {/* Obstacles */}
-      <section className="relative border-t border-line">
-        <GridDots side="top" />
-        <div className="mx-auto w-full max-w-[1440px] px-16 min-[1098px]:px-[272px] py-12">
-          <SectionHead
-            caption="Key Findings"
-            heading="Obstacles to solve for."
-            body="Three recurring themes surfaced across every interview and audit — each one quietly eroded confidence in the legacy quoting experience."
           />
 
           <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
             <Reveal delay={0}>
               <ObstacleCard
-                title="Unclear navigation"
-                body="Reps struggled to locate the next action across a sprawling legacy UI. There was no iterative path to revise a quote, so any change meant starting parts of the flow over."
+                title="Stakeholders interviews"
+                body="Aligned on business goals, user needs, and project scope while uncovering key challenges, constraints, and pain points from stakeholders and SMEs."
               />
             </Reveal>
             <Reveal delay={1}>
               <ObstacleCard
-                title="Cluttered information"
-                body="The interface lacks effective progressive disclosure, exposing users to too much information at once and increasing cognitive load."
+                title="Heuristic Evaluation"
+                body="Prioritised key user flows based on business goals and evaluated them using usability heuristics to identify usability issues and with improved recommendation."
               />
             </Reveal>
             <Reveal delay={2}>
               <ObstacleCard
-                title="Too many fields"
-                body="The current quoting tool required reps to manually fill 32+ fields per quote. Most were repetitive or could be inferred — but every one was a chance to slow down or introduce an error."
+                title="Competitor Analysis"
+                body="Understand the existing product, user workflows, and how complex tasks are currently handled."
               />
             </Reveal>
           </div>
-
-          {/* Legacy findings grid image */}
-          <Reveal delay={0}>
-            <div className="mt-12 relative w-full overflow-hidden rounded-[12px] border border-[#e7e7e7] bg-white">
-              <Image
-                src="/img/case-studies/o360/legacy-findings.png"
-                alt="Legacy O360 findings — six annotated screens showing key UX problems"
-                width={2600}
-                height={1300}
-                sizes="(min-width: 1098px) 896px, 100vw"
-                quality={100}
-                className="w-full h-auto"
-              />
-            </div>
-          </Reveal>
         </div>
       </section>
 
@@ -455,90 +453,407 @@ export default function O360CaseStudy() {
         </div>
       </section>
 
-      {/* Visual Design — wireframes + final UI */}
+      {/* Key Findings — Obstacles */}
       <section className="relative border-t border-line">
         <GridDots side="top" />
         <div className="mx-auto w-full max-w-[1440px] px-16 min-[1098px]:px-[272px] py-12">
           <SectionHead
-            caption="Visual design"
-            heading="From wireframe to product."
-            bodyNode={
-              <>
-                The visual language stays calm and confident — a focused
-                workspace for sales reps, and a data-dense yet scannable
-                surface for solution architects. Below: critical UX decisions
-                made in wireframing, then the final key screens — Customer
-                Info, Build Your Quote, Product Configuration, and Pricing.
-              </>
-            }
+            caption="Key Findings"
+            heading="Obstacles to solve for."
+            body="Three recurring themes surfaced across every interview and audit — each one quietly eroded confidence in the legacy quoting experience."
           />
 
-          {/* Wireframes (low-fi) */}
-          <Reveal delay={3}>
-            <div
-              className="mt-8 relative w-full overflow-hidden rounded-[12px] border border-[#e7e7e7]"
-              style={{ aspectRatio: "896/420" }}
-            >
-              <Image
-                src="/img/case-studies/o360/wireframes.png"
-                alt="O360 low-fidelity wireframe exploration"
-                fill
-                sizes="(min-width: 1098px) 896px, 100vw"
-                className="object-cover"
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Reveal delay={0}>
+              <ObstacleCard
+                title="Unclear navigation"
+                body="Reps struggled to locate the next action across a sprawling legacy UI. There was no iterative path to revise a quote, so any change meant starting parts of the flow over."
               />
-            </div>
-          </Reveal>
+            </Reveal>
+            <Reveal delay={1}>
+              <ObstacleCard
+                title="Cluttered information"
+                body="The interface lacks effective progressive disclosure, exposing users to too much information at once and increasing cognitive load."
+              />
+            </Reveal>
+            <Reveal delay={2}>
+              <ObstacleCard
+                title="Too many fields"
+                body="The current quoting tool required reps to manually fill 32+ fields per quote. Most were repetitive or could be inferred — but every one was a chance to slow down or introduce an error."
+              />
+            </Reveal>
+          </div>
 
-          {/* Final visual design */}
-          <Reveal delay={4}>
-            <div
-              className="mt-6 relative w-full overflow-hidden rounded-[12px] border border-[#e7e7e7]"
-              style={{ aspectRatio: "896/420" }}
-            >
+          {/* Legacy findings grid image */}
+          <Reveal delay={0}>
+            <div className="mt-12 relative w-full overflow-hidden rounded-[12px] border border-[#e7e7e7] bg-white">
               <Image
-                src="/img/case-studies/o360/visual-design.png"
-                alt="O360 final sample screens — customer info, build quote, product config, pricing"
-                fill
+                src="/img/case-studies/o360/legacy-findings.png"
+                alt="Legacy O360 findings — six annotated screens showing key UX problems"
+                width={2600}
+                height={1300}
                 sizes="(min-width: 1098px) 896px, 100vw"
-                className="object-cover"
+                quality={100}
+                className="w-full h-auto"
               />
             </div>
           </Reveal>
         </div>
       </section>
 
-      {/* Impact Created */}
+      {/* Information architecture — Before / After slider */}
       <section className="relative border-t border-line">
         <GridDots side="top" />
         <div className="mx-auto w-full max-w-[1440px] px-16 min-[1098px]:px-[272px] py-12">
           <Reveal>
-            <div className="rounded-[8px] border border-[#080018] bg-white p-6">
-              <h3 className="font-display text-[18px] leading-[24px] font-medium text-ink">
-                Impact Created
+            <h2 className="font-display text-[24px] leading-[32px] font-medium text-ink max-w-[896px]">
+              Information architecture
+            </h2>
+          </Reveal>
+          <Reveal delay={1}>
+            <p className="mt-4 font-mono text-[14px] leading-[22px] text-muted max-w-[705px]">
+              Drag the divider to compare the legacy scattered portals with the
+              new unified O360 architecture.
+            </p>
+          </Reveal>
+          <Reveal delay={2}>
+            <BeforeAfterSlider
+              before="/img/case-studies/o360/ia-before.png"
+              after="/img/case-studies/o360/ia-after.png"
+              alt="Information architecture"
+            />
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Userflow — configure, price and quotation */}
+      <section className="relative border-t border-line">
+        <GridDots side="top" />
+        <div className="mx-auto w-full max-w-[1440px] px-16 min-[1098px]:px-[272px] py-12">
+          <Reveal>
+            <h2 className="font-display text-[24px] leading-[32px] font-medium text-ink max-w-[896px]">
+              Userflow — configure, price and quotation
+            </h2>
+          </Reveal>
+          <Reveal delay={1}>
+            <p className="mt-4 font-mono text-[14px] leading-[22px] text-muted max-w-[705px]">
+              This unified user flow consolidates previously scattered legacy
+              processes into one seamless journey.
+            </p>
+          </Reveal>
+          <Reveal delay={2}>
+            <div
+              className="mt-8 relative w-full overflow-hidden rounded-[12px] border border-[#e7e7e7] bg-white"
+              style={{ aspectRatio: "896/619" }}
+            >
+              <Image
+                src="/img/case-studies/o360/userflow.png"
+                alt="Configure, price and quotation user flow diagram"
+                fill
+                sizes="(min-width: 1098px) 896px, 100vw"
+                className="object-contain"
+              />
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Critical UX decisions made while wireframing */}
+      <section className="relative border-t border-line">
+        <GridDots side="top" />
+        <div className="mx-auto w-full max-w-[1440px] px-16 min-[1098px]:px-[272px] py-12">
+          <Reveal>
+            <h2 className="font-display text-[24px] leading-[32px] font-medium text-ink max-w-[896px]">
+              Critical UX decisions made while wireframing
+            </h2>
+          </Reveal>
+
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
+            <Reveal delay={0}>
+              <ul className="flex flex-col gap-4 font-mono text-[14px] leading-[22px] text-muted">
+                <li className="pl-5 relative before:absolute before:left-0 before:top-[10px] before:size-1.5 before:rounded-full before:bg-ink">
+                  Reduced screen complexity — grouped related data to lower cognitive load.
+                </li>
+                <li className="pl-5 relative before:absolute before:left-0 before:top-[10px] before:size-1.5 before:rounded-full before:bg-ink">
+                  Guided flow — reduced confusion and enabled faster task completion.
+                </li>
+                <li className="pl-5 relative before:absolute before:left-0 before:top-[10px] before:size-1.5 before:rounded-full before:bg-ink">
+                  Removed non-essential fields to streamline the journey.
+                </li>
+                <li className="pl-5 relative before:absolute before:left-0 before:top-[10px] before:size-1.5 before:rounded-full before:bg-ink">
+                  Pre-filled data, fewer manual actions and automation — recommended product configuration, promotions and discounts.
+                </li>
+              </ul>
+            </Reveal>
+            <Reveal delay={1}>
+              <div
+                className="relative w-full overflow-hidden rounded-[12px] border border-[#e7e7e7] bg-white"
+                style={{ aspectRatio: "514/442" }}
+              >
+                <Image
+                  src="/img/case-studies/o360/critical-ux.png"
+                  alt="Critical UX decisions wireframing screenshot"
+                  fill
+                  sizes="(min-width: 1098px) 440px, 100vw"
+                  className="object-contain"
+                />
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Design system and scalability */}
+      <section className="relative border-t border-line">
+        <GridDots side="top" />
+        <div className="mx-auto w-full max-w-[1440px] px-16 min-[1098px]:px-[272px] py-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
+            <Reveal delay={0}>
+              <div className="flex flex-col gap-6">
+                <h2 className="font-display text-[24px] leading-[32px] font-medium text-ink">
+                  Design system and scalability
+                </h2>
+                <p className="font-mono text-[14px] leading-[22px] text-muted">
+                  Verizon had a well-established design system foundation;
+                  however, it lacked scalable components required to support
+                  complex enterprise workflows.
+                </p>
+                <p className="font-mono text-[14px] leading-[22px] text-muted">
+                  As a Product Designer, I identified these gaps, designed
+                  reusable components and patterns, and collaborated with the
+                  Verizon Design System Governance team to review, refine, and
+                  approve them for adoption across products.
+                </p>
+              </div>
+            </Reveal>
+            <Reveal delay={1}>
+              <div
+                className="relative w-full overflow-hidden rounded-[12px] border border-[#e7e7e7] bg-white"
+                style={{ aspectRatio: "514/482" }}
+              >
+                <Image
+                  src="/img/case-studies/o360/design-system.png"
+                  alt="Verizon design system components"
+                  fill
+                  sizes="(min-width: 1098px) 440px, 100vw"
+                  className="object-contain"
+                />
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Key Screens — Before / After */}
+      <section className="relative border-t border-line">
+        <GridDots side="top" />
+        <div className="mx-auto w-full max-w-[1440px] px-16 min-[1098px]:px-[272px] py-12">
+          <Reveal>
+            <h2 className="font-display text-[24px] leading-[32px] font-medium text-ink">
+              Key Screens
+            </h2>
+          </Reveal>
+
+          {/* Before / After tags row */}
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
+            <Reveal delay={0}>
+              <span className="inline-flex self-start items-center rounded-full border border-[#e7e7e7] bg-white px-6 py-2 font-mono text-[13px] font-semibold text-ink">
+                Before
+              </span>
+            </Reveal>
+            <Reveal delay={1}>
+              <span className="inline-flex self-start items-center rounded-full border border-[#e7e7e7] bg-white px-6 py-2 font-mono text-[13px] font-semibold text-ink">
+                After
+              </span>
+            </Reveal>
+          </div>
+
+          {/* Pricing subsection */}
+          <div className="mt-8">
+            <Reveal>
+              <h3 className="font-mono text-[16px] leading-[22px] font-semibold text-ink">
+                Pricing
               </h3>
-              <ul className="mt-4 flex flex-col gap-2 font-mono text-[14px] leading-[20px] text-muted">
-                <li>
-                  <span className="font-semibold text-ink">40% faster task completion —</span>{" "}
-                  unmoderated usability testing with 5 internal sales reps
-                  showed time-on-task drop from 12 minutes to 7 minutes per
-                  quote.
+            </Reveal>
+            <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
+              <Reveal delay={0}>
+                <div
+                  className="relative w-full overflow-hidden rounded-[12px] border border-[#e7e7e7] bg-white"
+                  style={{ aspectRatio: "401/216" }}
+                >
+                  <Image
+                    src="/img/case-studies/o360/pricing-before.png"
+                    alt="Pricing before redesign"
+                    fill
+                    sizes="(min-width: 1098px) 440px, 100vw"
+                    className="object-cover"
+                  />
+                </div>
+              </Reveal>
+              <Reveal delay={1}>
+                <div
+                  className="relative w-full overflow-hidden rounded-[12px] border border-[#e7e7e7] bg-white"
+                  style={{ aspectRatio: "385/228" }}
+                >
+                  <Image
+                    src="/img/case-studies/o360/pricing-after.png"
+                    alt="Pricing after redesign"
+                    fill
+                    sizes="(min-width: 1098px) 440px, 100vw"
+                    className="object-cover"
+                  />
+                </div>
+              </Reveal>
+            </div>
+            <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
+              <Reveal delay={0}>
+                <p className="font-mono text-[14px] leading-[22px] text-muted">
+                  Information was scattered across the interface without
+                  applying progressive disclosure, forcing users to process
+                  unnecessary details which cause delay in completing their
+                  tasks.
+                </p>
+              </Reveal>
+              <Reveal delay={1}>
+                <p className="font-mono text-[14px] leading-[22px] text-muted">
+                  Introduced a simplified Promotions &amp; Discounts summary
+                  card that surfaced key pricing insights upfront, reducing
+                  scrolling, minimizing manual effort, and enabling faster
+                  quote reviews.
+                </p>
+              </Reveal>
+            </div>
+          </div>
+
+          {/* Product configuration subsection */}
+          <div className="mt-12">
+            <Reveal>
+              <h3 className="font-mono text-[16px] leading-[22px] font-semibold text-ink">
+                Product configuration
+              </h3>
+            </Reveal>
+            <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
+              <Reveal delay={0}>
+                <div
+                  className="relative w-full overflow-hidden rounded-[12px] border border-[#e7e7e7] bg-white"
+                  style={{ aspectRatio: "385/213" }}
+                >
+                  <Image
+                    src="/img/case-studies/o360/productconfig-before.png"
+                    alt="Product configuration before redesign"
+                    fill
+                    sizes="(min-width: 1098px) 440px, 100vw"
+                    className="object-cover"
+                  />
+                </div>
+              </Reveal>
+              <Reveal delay={1}>
+                <div
+                  className="relative w-full overflow-hidden rounded-[12px] border border-[#e7e7e7] bg-white"
+                  style={{ aspectRatio: "382/212" }}
+                >
+                  <Image
+                    src="/img/case-studies/o360/productconfig-after.png"
+                    alt="Product configuration after redesign"
+                    fill
+                    sizes="(min-width: 1098px) 440px, 100vw"
+                    className="object-cover"
+                  />
+                </div>
+              </Reveal>
+            </div>
+            <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
+              <Reveal delay={0}>
+                <p className="font-mono text-[14px] leading-[22px] text-muted">
+                  Information was scattered across the interface without
+                  applying progressive disclosure, forcing users to process
+                  unnecessary details which cause delay in completing their
+                  tasks.
+                </p>
+              </Reveal>
+              <Reveal delay={1}>
+                <p className="font-mono text-[14px] leading-[22px] text-muted">
+                  Added a structured milestone navigation with contextual quote
+                  details, enabling users to understand their current stage and
+                  complete tasks in a logical sequence.
+                </p>
+              </Reveal>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Test and impact */}
+      <section className="relative border-t border-line">
+        <GridDots side="top" />
+        <div className="mx-auto w-full max-w-[1440px] px-16 min-[1098px]:px-[272px] py-12">
+          <Reveal>
+            <h2 className="font-display text-[24px] leading-[32px] font-medium text-ink">
+              Test and impact
+            </h2>
+          </Reveal>
+
+          {/* Usability Testing + Benchmarking cards */}
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <Reveal delay={0}>
+              <div className="flex flex-col gap-4 rounded-[12px] border border-[#e7e7e7] bg-white p-6 h-full">
+                <h3 className="font-mono text-[16px] leading-[22px] font-semibold text-ink">
+                  Usability Testing
+                </h3>
+                <p className="font-mono text-[14px] leading-[22px] text-muted">
+                  We conducted formative usability testing with a prototype to
+                  evaluate the user flow and content. Participants were asked
+                  to think aloud using the Figma prototype link and share their
+                  feedback in real time.
+                </p>
+                <p className="font-mono text-[14px] leading-[22px] text-muted">
+                  A total of 15 participants took part in overall usability
+                  testing, which was conducted in Webex and recorded for
+                  analysis.
+                </p>
+              </div>
+            </Reveal>
+            <Reveal delay={1}>
+              <div className="flex flex-col gap-4 rounded-[12px] border border-[#e7e7e7] bg-white p-6 h-full">
+                <h3 className="font-mono text-[16px] leading-[22px] font-semibold text-ink">
+                  Benchmarking
+                </h3>
+                <p className="font-mono text-[14px] leading-[22px] text-muted">
+                  The number or percentage of participants who successfully
+                  completed a specific task. Assessing whether users correctly
+                  identify which elements are clickable versus decorative.
+                  Tracking how many times users took a wrong turn or had to
+                  restart a task. If participants failed or dropped off at any
+                  point, identifying the bottlenecks in the flow.
+                </p>
+              </div>
+            </Reveal>
+          </div>
+
+          {/* Impact & Metrics */}
+          <Reveal delay={2}>
+            <div className="mt-6 rounded-[12px] border border-[#e7e7e7] bg-white p-6">
+              <h3 className="font-mono text-[16px] leading-[22px] font-semibold text-ink">
+                Impact &amp; Metrics
+              </h3>
+              <ul className="mt-4 flex flex-col gap-2 font-mono text-[14px] leading-[22px] text-muted">
+                <li className="pl-5 relative before:absolute before:left-0 before:top-[10px] before:size-1.5 before:rounded-full before:bg-ink">
+                  Sales representatives no longer had to switch tools.
                 </li>
-                <li>
-                  <span className="font-semibold text-ink">35% fewer manual inputs —</span>{" "}
-                  the field count per quote dropped from 32 to 20 through
-                  progressive disclosure, pre-filled data, and recommended
-                  configurations.
+                <li className="pl-5 relative before:absolute before:left-0 before:top-[10px] before:size-1.5 before:rounded-full before:bg-ink">
+                  Reduced quoting time with fewer steps and guided paths.
                 </li>
-                <li>
-                  <span className="font-semibold text-ink">30% shorter workflow —</span>{" "}
-                  the journey consolidated from 12 screens to 8 by removing
-                  redundant steps and merging related decisions.
+                <li className="pl-5 relative before:absolute before:left-0 before:top-[10px] before:size-1.5 before:rounded-full before:bg-ink">
+                  Persona-based flows and smart validations reduced errors and rework.
                 </li>
-                <li>
-                  <span className="font-semibold text-ink">0% critical error rate —</span>{" "}
-                  inline validation, smart defaults, and persona-aware flows
-                  brought the critical error rate from 15% down to 0% during
-                  testing.
+                <li className="pl-5 relative before:absolute before:left-0 before:top-[10px] before:size-1.5 before:rounded-full before:bg-ink">
+                  <span className="font-semibold text-ink">Field update reduction by 35%.</span>
+                </li>
+                <li className="pl-5 relative before:absolute before:left-0 before:top-[10px] before:size-1.5 before:rounded-full before:bg-ink">
+                  <span className="font-semibold text-ink">Reduced task completion time by 40%.</span>
+                </li>
+                <li className="pl-5 relative before:absolute before:left-0 before:top-[10px] before:size-1.5 before:rounded-full before:bg-ink">
+                  <span className="font-semibold text-ink">Page / Steps reduction by 30%.</span>
                 </li>
               </ul>
             </div>
@@ -696,6 +1011,104 @@ function GoalRow({
         </p>
       </div>
     </Reveal>
+  );
+}
+
+function BeforeAfterSlider({
+  before,
+  after,
+  alt,
+}: {
+  before: string;
+  after: string;
+  alt: string;
+}) {
+  const [position, setPosition] = React.useState(50);
+  const containerRef = React.useRef<HTMLDivElement>(null);
+  const dragging = React.useRef(false);
+
+  const updatePosition = (clientX: number) => {
+    if (!containerRef.current) return;
+    const rect = containerRef.current.getBoundingClientRect();
+    const x = ((clientX - rect.left) / rect.width) * 100;
+    setPosition(Math.max(0, Math.min(100, x)));
+  };
+
+  return (
+    <div
+      ref={containerRef}
+      className="mt-8 relative w-full overflow-hidden rounded-[12px] border border-[#e7e7e7] bg-white select-none touch-none"
+      style={{ aspectRatio: "896/443" }}
+      onMouseDown={(e) => {
+        dragging.current = true;
+        updatePosition(e.clientX);
+      }}
+      onMouseMove={(e) => {
+        if (dragging.current) updatePosition(e.clientX);
+      }}
+      onMouseUp={() => {
+        dragging.current = false;
+      }}
+      onMouseLeave={() => {
+        dragging.current = false;
+      }}
+      onTouchStart={(e) => {
+        dragging.current = true;
+        updatePosition(e.touches[0].clientX);
+      }}
+      onTouchMove={(e) => {
+        if (dragging.current) updatePosition(e.touches[0].clientX);
+      }}
+      onTouchEnd={() => {
+        dragging.current = false;
+      }}
+    >
+      {/* Bottom layer: After */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={after}
+        alt={`${alt} — after`}
+        draggable={false}
+        className="absolute inset-0 h-full w-full object-contain pointer-events-none"
+      />
+
+      {/* Top layer: Before, clipped by the slider position */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={before}
+          alt={`${alt} — before`}
+          draggable={false}
+          className="absolute inset-0 h-full w-full object-contain"
+        />
+      </div>
+
+      {/* Divider + drag handle */}
+      <div
+        className="absolute inset-y-0 w-[3px] bg-white shadow-[0_0_10px_rgba(0,0,0,0.3)] pointer-events-none"
+        style={{ left: `${position}%`, transform: "translateX(-50%)" }}
+      >
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-11 rounded-full bg-white shadow-[0_4px_12px_rgba(0,0,0,0.18)] border border-[#e7e7e7] grid place-items-center">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            stroke="#080018"
+            strokeWidth="1.6"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M5 4 L2 8 L5 12" />
+            <path d="M11 4 L14 8 L11 12" />
+          </svg>
+        </div>
+      </div>
+
+    </div>
   );
 }
 
